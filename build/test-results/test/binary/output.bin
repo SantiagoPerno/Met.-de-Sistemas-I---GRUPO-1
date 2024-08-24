@@ -1,0 +1,9 @@
+ˆ2024-08-23 19:26:53.868 [Test worker @coroutine#1] TRACE i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to http:///
+¥2024-08-23 19:26:54.019 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - No ktor.deployment.watch patterns specified, automatic reload is not active.
+}2024-08-23 19:26:54.621 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - Application started in 0.61 seconds.
+w2024-08-23 19:26:54.626 [DefaultDispatcher-worker-3 @coroutine#4] INFO  ktor.test - Responding at http://localhost:80
+y2024-08-23 19:26:54.627 [DefaultDispatcher-worker-3 @coroutine#4] INFO  ktor.test - Responding at https://localhost:443
+¡2024-08-23 19:26:54.724 [DefaultDispatcher-worker-1 @request#2] TRACE i.k.s.p.c.ContentNegotiation - Skipping response body transformation from HttpStatusCode to OutgoingContent for the GET / request because the HttpStatusCode type is ignored. See [ContentNegotiationConfig::ignoreType].
+¤2024-08-23 19:26:54.724 [DefaultDispatcher-worker-1 @request#2] TRACE i.k.s.p.statuspages.StatusPages - No handler found for status code 404 Not Found for call: /
+“2024-08-23 19:26:54.755 [Test worker @coroutine#1] TRACE i.k.client.plugins.HttpCallValidator - Validating response for request http://localhost/
+™2024-08-23 19:26:54.758 [Test worker @coroutine#1] TRACE i.k.c.p.DefaultResponseValidation - Skipping default response validation for http://localhost/
