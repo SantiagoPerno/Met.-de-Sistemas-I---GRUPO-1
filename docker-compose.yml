@@ -1,6 +1,6 @@
 services:
   mongo:
-    image: mongo
+    image: mongo:4.4
     hostname: "mongo"
     container_name: 'mongo_methodology'
     volumes:

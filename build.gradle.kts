@@ -38,4 +38,8 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:2.3.12")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
 }
+

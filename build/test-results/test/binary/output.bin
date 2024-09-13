@@ -1,0 +1,66 @@
+ˆ2024-09-12 06:30:17.434 [Test worker @coroutine#1] TRACE i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to http:///
+¥2024-09-12 06:30:17.846 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - No ktor.deployment.watch patterns specified, automatic reload is not active.
+Ý2024-09-12 06:30:19.588 [DefaultDispatcher-worker-1 @call-context#2] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]
+Ë2024-09-12 06:30:19.631 [cluster-rtt-ClusterId{value='66e2b4ab9b0cac098b5221eb', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.connection - Closing connection connectionId{localValue:1}
+Ç2024-09-12 06:30:19.631 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221eb', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.connection - Closing connection connectionId{localValue:2}
+Ý2024-09-12 06:30:19.631 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221eb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 127.0.0.1:27017
+@com.mongodb.MongoSocketOpenException: Exception opening socket
+M	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:73)
+f	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:204)
+‡	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:199)
+s	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:159)
+5	at java.base/java.lang.Thread.run(Thread.java:829)
+CCaused by: java.net.ConnectException: Connection refused: connect
+F	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+P	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+\	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+c	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+Z	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+J	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+8	at java.base/java.net.Socket.connect(Socket.java:609)
+`	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+Y	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:82)
+M	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:68)
+	... 4 common frames omitted
+š2024-09-12 06:30:19.684 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221eb', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: connect}}]
+Æ2024-09-12 06:30:19.700 [DefaultDispatcher-worker-1 @call-context#2] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.9.0"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Microsoft/11.0.16.1+1-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='local', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@17be2208, com.mongodb.Jep395RecordCodecProvider@2856f13d]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=20, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+Ý2024-09-12 06:30:19.731 [DefaultDispatcher-worker-1 @call-context#2] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]
+Æ2024-09-12 06:30:19.772 [DefaultDispatcher-worker-1 @call-context#2] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.9.0"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Microsoft/11.0.16.1+1-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='local', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@17be2208, com.mongodb.Jep395RecordCodecProvider@2856f13d]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=20, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+~2024-09-12 06:30:19.963 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - Application started in 2.132 seconds.
+Ë2024-09-12 06:30:19.978 [cluster-rtt-ClusterId{value='66e2b4ab9b0cac098b5221ec', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.connection - Closing connection connectionId{localValue:3}
+Ç2024-09-12 06:30:19.978 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221ec', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.connection - Closing connection connectionId{localValue:4}
+Ý2024-09-12 06:30:19.978 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221ec', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 127.0.0.1:27017
+@com.mongodb.MongoSocketOpenException: Exception opening socket
+M	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:73)
+f	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:204)
+‡	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:199)
+s	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:159)
+5	at java.base/java.lang.Thread.run(Thread.java:829)
+CCaused by: java.net.ConnectException: Connection refused: connect
+F	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+P	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+\	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+c	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+Z	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+J	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+8	at java.base/java.net.Socket.connect(Socket.java:609)
+`	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+Y	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:82)
+M	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:68)
+	... 4 common frames omitted
+š2024-09-12 06:30:19.978 [cluster-ClusterId{value='66e2b4ab9b0cac098b5221ec', description='null'}-127.0.0.1:27017] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: connect}}]
+w2024-09-12 06:30:20.046 [DefaultDispatcher-worker-2 @coroutine#4] INFO  ktor.test - Responding at http://localhost:80
+y2024-09-12 06:30:20.046 [DefaultDispatcher-worker-2 @coroutine#4] INFO  ktor.test - Responding at https://localhost:443
+m2024-09-12 06:30:20.437 [DefaultDispatcher-worker-1 @request#2] TRACE io.ktor.routing.Routing - Trace for []
+/, segment:0 -> SUCCESS @ /
+  /, segment:0 -> SUCCESS @ /
+8    /(method:GET), segment:0 -> SUCCESS @ /(method:GET)
+@  /users, segment:0 -> FAILURE "Selector didn't match" @ /users
+Matched routes:
+$  "" -> "<slash>" -> "(method:GET)"
+Route resolve result:
+  SUCCESS @ /(method:GET)
+¡2024-09-12 06:30:20.560 [DefaultDispatcher-worker-1 @request#2] TRACE i.k.s.p.c.ContentNegotiation - Skipping response body transformation from HttpStatusCode to OutgoingContent for the GET / request because the HttpStatusCode type is ignored. See [ContentNegotiationConfig::ignoreType].
+¤2024-09-12 06:30:20.560 [DefaultDispatcher-worker-1 @request#2] TRACE i.k.s.p.statuspages.StatusPages - No handler found for status code 404 Not Found for call: /
+“2024-09-12 06:30:20.605 [Test worker @coroutine#1] TRACE i.k.client.plugins.HttpCallValidator - Validating response for request http://localhost/
+™2024-09-12 06:30:20.605 [Test worker @coroutine#1] TRACE i.k.c.p.DefaultResponseValidation - Skipping default response validation for http://localhost/

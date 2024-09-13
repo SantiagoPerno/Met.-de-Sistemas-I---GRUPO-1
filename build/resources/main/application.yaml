@@ -9,3 +9,8 @@ db:
     mongo:
         user: 'local'
         password: 'secret'
+        host: '127.0.0.1'       # Dirección IP del servidor MongoDB
+        port: '27017'           # Puerto de conexión (puedes cambiarlo si usas otro)
+        database:
+            name: 'myDatabase'  # Nombre de tu base de datos
+        maxPoolSize: '20'       # Opcional, pero recomendable para conexiones
