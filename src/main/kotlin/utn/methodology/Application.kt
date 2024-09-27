@@ -40,10 +40,7 @@ val eventBus = InMemoryEventBus()
 
 fun Application.module() {
     install(ContentNegotiation) {
-        json()
-        jackson {
-            enable(SerializationFeature.INDENT_OUTPUT)
-        }
+        json() // o utiliza el que prefieras
     }
 
     connectToMongoDB()

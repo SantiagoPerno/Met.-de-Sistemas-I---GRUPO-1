@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.8'  # Asegúrate de especificar la versión
 
 services:
   mongo:
@@ -11,3 +11,30 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Asegúrate de que esto esté correcto
+    container_name: my-app
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_DB_HOST: mongo
+      MONGO_DB_PORT: 27017
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

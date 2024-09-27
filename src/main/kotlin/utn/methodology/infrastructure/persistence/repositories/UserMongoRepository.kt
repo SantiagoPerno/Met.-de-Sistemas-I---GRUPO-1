@@ -5,8 +5,10 @@ import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.UpdateOptions
 import io.github.cdimascio.dotenv.dotenv
 import utn.methodology.domain.entities.contracts.UserRepository
+import utn.methodology.infrastructure.http.routes.healthRoutes
 import utn.methodology.domain.entities.entity.User
 import org.bson.Document
+import utn.methodology.infrastructure.http.routes.userRoutes
 import javax.print.attribute.standard.JobOriginatingUserName
 
 val collectionName: String = dotenv()["USER_COLLECTION_NAME"] ?: "user"
@@ -30,34 +32,32 @@ class UserMongoRepository(private val database: MongoDatabase) : UserRepository 
 
     override fun findOne(id: String): User? {
         val filter = Document("_id", id);
-        val primitives = collection.find(filter).firstOrNull();
+        val document = collection.find(filter).firstOrNull();
 
-        if (primitives == null) {
-            return null;
+        return document?.let {
+            User.fromPrimitives(mapFromDocument(it))
         }
-
-        return User.fromPrimitives(primitives as Map<String, String>)
     }
 
-    override fun findByEmal(email: String): User? {
+    override fun findByEmail(email: String): User? {
         val filter = Document("email", email);
-        val primitives = collection.find(filter).firstOrNull();
+        val document = collection.find(filter).firstOrNull();
 
-        if(primitives == null){
-            return null;
+        return document?.let {
+            User.fromPrimitives(mapFromDocument(it))
         }
-
-        return User.fromPrimitives(primitives as Map<String, String>)
     }
 
     override fun findByUserName(userName: String): User? {
-        val filter = Document("userName", userName);
-        val primitives = collection.find(filter).firstOrNull();
+        val filter = Document("userName", userName)
+        val document = collection.find(filter).firstOrNull()
 
-        if(primitives == null){
-            return null;
+        return document?.let {
+            User.fromPrimitives(mapFromDocument(it))
         }
+    }
 
-        return User.fromPrimitives(primitives as Map<String, String>)
+    private fun mapFromDocument(document: Document): Map<String, String> {
+        return document.entries.associate { it.key to it.value.toString() }
     }
 }

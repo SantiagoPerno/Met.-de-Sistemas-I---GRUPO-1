@@ -24,8 +24,15 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17 // O la versión que estés utilizando
-    targetCompatibility = JavaVersion.VERSION_17 // O la versión que estés utilizando
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    compilerOptions {
+        allWarningsAsErrors.set(true) // Opcional: trata todas las advertencias como errores
+        freeCompilerArgs.add("-Xjvm-default=all") // Agregar este argumento si es necesario
+    }
 }
 
 dependencies {
