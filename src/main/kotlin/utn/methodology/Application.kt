@@ -11,8 +11,41 @@ import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import org.slf4j.LoggerFactory
+import io.ktor.application.*
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.StatusPages
+import io.ktor.gson.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+import org.litote.kmongo.coroutine.coroutine
+import org.litote.kmongo.reactivestreams.KMongo
 import utn.methodology.infrastructure.persistence.configureDatabases
 
+
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        install(ContentNegotiation) {
+            gson {
+                setPrettyPrinting()
+            }
+        }
+        install(StatusPages)
+
+        val client = KMongo.createClient().coroutine
+        val database = client.getDatabase("my_database")
+
+        val userRepository = UserRepository(database)
+        val userCommandHandler = UserCommandHandler(userRepository)
+        val userQueryHandler = UserQueryHandler(userRepository)
+
+        routing {
+            userRoutes(userCommandHandler, userQueryHandler)
+        }
+    }.start(wait = true)
+}
+
+/*
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
 }
@@ -52,3 +85,4 @@ fun logError(call: ApplicationCall, cause: Throwable) {
     val requestUri = call.request.uri
     log.error("Error at $requestUri: ${cause.localizedMessage}", cause)
 }
+ */
