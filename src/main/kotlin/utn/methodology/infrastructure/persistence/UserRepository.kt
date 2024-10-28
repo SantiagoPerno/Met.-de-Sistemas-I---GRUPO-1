@@ -1,7 +1,7 @@
-package com.example.repositories
+package utn.methodology.infrastructure.persistence
 
-import com.example.models.User
 import org.litote.kmongo.coroutine.CoroutineDatabase
+import utn.methodology.application.models.User
 
 class UserRepository(private val db: CoroutineDatabase) {
 

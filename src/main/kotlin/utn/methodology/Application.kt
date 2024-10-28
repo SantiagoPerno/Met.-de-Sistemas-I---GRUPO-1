@@ -1,6 +1,5 @@
 package utn.methodology
 
-import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.http.*
 import io.ktor.serialization.jackson.*
 import io.ktor.serialization.kotlinx.json.*
@@ -10,17 +9,17 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import org.slf4j.LoggerFactory
-import io.ktor.application.*
-import io.ktor.features.ContentNegotiation
-import io.ktor.features.StatusPages
-import io.ktor.gson.*
-import io.ktor.routing.*
+import io.ktor.serialization.gson.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.routing.*
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
-import utn.methodology.infrastructure.persistence.configureDatabases
+import utn.methodology.application.commandhandlers.UserCommandHandler
+import utn.methodology.application.queryhandlers.UserQueryHandler
+import utn.methodology.infrastructure.http.router.userRoutes
+import utn.methodology.infrastructure.persistence.UserRepository
+
 
 
 fun main() {

@@ -1,0 +1,3 @@
+ˆ2024-10-28 20:09:32.321 [Test worker @coroutine#1] TRACE i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to http:///
+¥2024-10-28 20:09:32.604 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - No ktor.deployment.watch patterns specified, automatic reload is not active.
+«2024-10-28 20:09:32.698 [Test worker @coroutine#1] TRACE i.k.client.plugins.HttpCallValidator - Processing exception io.ktor.server.engine.internal.ReloadingException: Module function cannot be found for the fully qualified name 'utn.methodology.ApplicationKt.module' for request http://localhost/

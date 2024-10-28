@@ -1,11 +1,12 @@
 //Este handler recibe el CreateUserCommand, valida los datos y crea el usuario.
 
 
-package com.example.handlers
+package utn.methodology.application.commandhandlers
 
-import com.example.models.CreateUserCommand
-import com.example.repositories.UserRepository
+import utn.methodology.application.models.CreateUserCommand
+import utn.methodology.infrastructure.persistence.UserRepository
 import org.bson.types.ObjectId
+import utn.methodology.application.models.User
 
 class UserCommandHandler(private val userRepository: UserRepository) {
 

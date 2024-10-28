@@ -1,4 +1,4 @@
-package com.example.models
+package utn.methodology.application.models
 
 data class CreateUserCommand(
     val username: String,
