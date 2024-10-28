@@ -24,6 +24,14 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-core:2.0.0")
+    implementation("io.ktor:ktor-server-netty:2.0.0")
+    implementation("io.ktor:ktor-server-sessions:2.0.0")
+    implementation("io.ktor:ktor-server-content-negotiation:2.0.0")
+    implementation("io.ktor:ktor-serialization-gson:2.0.0")
+    implementation("org.litote.kmongo:kmongo-coroutine:4.5.0")
+
+
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
