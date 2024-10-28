@@ -22,7 +22,7 @@ class UserRoutes {
                 try {
                     val createUserRequest = call.receive<CreateUserCommand>()
 
-                    // Validaciones básicas (puedes mejorar las validaciones)
+                    // Validaciones básicas
                     if (createUserRequest.username.isNullOrEmpty() ||
                         createUserRequest.email.isNullOrEmpty() ||
                         createUserRequest.password.isNullOrEmpty()) {
