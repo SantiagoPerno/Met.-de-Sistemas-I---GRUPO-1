@@ -1,14 +1,9 @@
 package utn.methodology
 
-import io.ktor.http.*
-import io.ktor.serialization.jackson.*
-import io.ktor.serialization.kotlinx.json.*
+
 import io.ktor.server.application.*
-import io.ktor.server.plugins.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.StatusPages
-import io.ktor.server.request.*
-import io.ktor.server.response.*
 import io.ktor.serialization.gson.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
