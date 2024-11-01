@@ -1,4 +1,7 @@
 package utn.methodology.application.models
 
-class Follow {
-}
+data class Follow(
+    val userId: String,
+    val followedUserId: String
+)
+

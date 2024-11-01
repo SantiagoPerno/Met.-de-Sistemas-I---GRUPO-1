@@ -1,9 +1,10 @@
 package utn.methodology.application.commandhandlers
 
+import utn.methodology.application.models.Post
 import utn.methodology.application.models.PostRequest
-import utn.methodology.application.repositories.PostRepository
+import utn.methodology.infrastructure.persistence.PostRepository
 
-    class PostCommandHandler(private val postRepository: PostRepository) {
+class PostCommandHandler(private val postRepository: PostRepository) {
 
         suspend fun createPost(request: PostRequest): String {
             val newPost = Post(
