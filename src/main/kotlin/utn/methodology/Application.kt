@@ -1,21 +1,22 @@
 package utn.methodology
 
-
-import io.ktor.server.application.*
-import io.ktor.server.plugins.contentnegotiation.*
-import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.serialization.gson.*
+import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.routing.*
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
+import utn.methodology.application.commandhandlers.PostCommandHandler
+import utn.methodology.application.commandhandlers.PostQueryHandler
 import utn.methodology.application.commandhandlers.UserCommandHandler
 import utn.methodology.application.queryhandlers.UserQueryHandler
+import utn.methodology.infrastructure.http.router.postRoutes
 import utn.methodology.infrastructure.http.router.userRoutes
+import utn.methodology.infrastructure.persistence.PostRepository
 import utn.methodology.infrastructure.persistence.UserRepository
-
-
 
 fun main() {
     embeddedServer(Netty, port = 8080) {
@@ -32,9 +33,13 @@ fun main() {
         val userRepository = UserRepository(database)
         val userCommandHandler = UserCommandHandler(userRepository)
         val userQueryHandler = UserQueryHandler(userRepository)
+        val postRepository = PostRepository(database)
+        val postCommandHandler = PostCommandHandler(postRepository)
+        val postQueryHandler = PostQueryHandler(postRepository)
 
         routing {
             userRoutes(userCommandHandler, userQueryHandler)
+            postRoutes(postCommandHandler, postQueryHandler)
         }
     }.start(wait = true)
 }
