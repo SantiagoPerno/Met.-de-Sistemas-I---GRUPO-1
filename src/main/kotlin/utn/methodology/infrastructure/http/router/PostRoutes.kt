@@ -28,7 +28,7 @@ fun Route.postRoutes(
 
                 // Llamar al handler para crear el post
                 val result = postCommandHandler.createPost(postRequest)
-                call.respond(HttpStatusCode.Created, result)
+                call.respond(HttpStatusCode.Created, "Post generado")
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.InternalServerError, e.message ?: "Error interno al crear el post")
             }

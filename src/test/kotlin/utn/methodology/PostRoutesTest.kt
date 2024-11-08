@@ -9,6 +9,7 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.serialization.gson.*
 import io.ktor.server.routing.*
 import io.mockk.mockk
+import org.litote.kmongo.json
 import utn.methodology.application.commandhandlers.PostCommandHandler
 import utn.methodology.application.commandhandlers.PostQueryHandler
 import utn.methodology.infrastructure.http.router.postRoutes
@@ -67,6 +68,7 @@ class PostRoutesTest {
                         {
                             "userId": "",
                             "message": ""
+                            }
                     """.trimIndent()
                 )
             }.apply {
